@@ -23,6 +23,7 @@ def sign_up():
         username = request.form['username']
         name = request.form['name']
         password = request.form['password']
+        print(name,username,password)
         if backend.add_user(name,username,password):
             session['username'] = username
             return redirect(url_for('home_page'))
