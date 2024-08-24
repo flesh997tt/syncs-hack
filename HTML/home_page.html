@@ -13,27 +13,10 @@
             <img src="../assets/logo.png" alt="Logo" width="150">
         </div>
 
-        <h1>Upload Your Calendar</h1>
-        <form method="POST" enctype="multipart/form-data">
-            <div class="file-upload">
-                <label for="file">Select a .ics file:</label>
-                <input type="file" id="file" name="file" accept=".ics">
-            </div>
-            <button type="submit">Check Availability</button>
-        </form>
-
-        {% if events %}
-        <div class="events">
-            <h2>Your Events</h2>
-            {% for event in events %}
-            <div class="event">
-                <strong>{{ event.summary }}</strong><br>
-                Start: {{ event.start }}<br>
-                End: {{ event.end }}
-            </div>
-            {% endfor %}
+        <div class="auth-buttons">
+            <a href="login.html" class="button">Sign In</a>
+            <a href="sign_up.html" class="button">Sign Up</a>
         </div>
-        {% endif %}
     </div>
 </body>
 </html>
