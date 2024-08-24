@@ -1,6 +1,6 @@
 from person import Person
 
-class backend:
+class Backend:
     def __init__(self, filename: str):
         self.filename = filename
     
