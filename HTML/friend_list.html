@@ -8,6 +8,11 @@
 </head>
 <body>
     <div class="container">
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <a href="profile_page.html" class="button">Profile</a>
+        </div>
+
         <!-- Logo Section -->
         <div class="logo">
             <img src="../assets/logo.png" alt="Logo" width="150">
@@ -27,7 +32,7 @@
         {% endif %}
 
         <a href="{{ url_for('add_friend') }}" class="button">Add a Friend</a>
-        <a href="{{ url_for('sign_out') }}" class="button">Sign Out</a>
+        <a href="login.html" class="button">Sign Out</a>
     </div>
 </body>
 </html>
