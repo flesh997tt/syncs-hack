@@ -10,9 +10,10 @@ app.secret_key = "HEY"
 @app.route('/login', methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        attempt = request.form['username']
-        if backend.login_checker(attempt):
-            session['username'] = attempt
+        username = request.form['username']
+        password = request.form['password']
+        if backend.login_checker(username, password):
+            session['username'] = username
             return redirect(url_for('friend_list'))
         return render_template("login.html")
     return render_template("login.html")
