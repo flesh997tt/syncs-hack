@@ -36,7 +36,8 @@ def friend_list():
     username = session['username']
     me = backend.find_username(username)
     friend = me.online_friends()
-    return render_template("friend_list.html", friend_list=friend)
+    name = me.get_name()
+    return render_template("friend_list.html", friend_list=friend, name=name)
     
 @app.route("/")
 def home_page():
@@ -56,3 +57,14 @@ def profile_page():
 def sign_out():
     session.pop('username', default=None)
 
+@app.route("/add_friend")
+def add_friend():
+    username = session['username']
+    me = backend.find_username(username)
+    friend_name = request.form('friend')
+    friend = backend.identity(friend_name)
+    if friend is None:
+        return False
+    if me.add_friend(friend):
+        return redirect(url_for('friend_list'))
+    return False

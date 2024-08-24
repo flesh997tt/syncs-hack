@@ -80,11 +80,12 @@ class Person:
             if friend == person:
                 return True
         return False
-    
+
     def add_friend(self, friend):
         if self.is_friend(friend):
             return False
         self.friends.append(friend)
+        return True
 
     def __eq__(self, other):
         return self.username == other.username

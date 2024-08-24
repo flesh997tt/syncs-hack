@@ -45,3 +45,9 @@ class Backend:
                 else:
                     return False
         return False
+    
+    def identity(self, username):
+        for person in self.people:
+            if person.get_username() == username:
+                return person
+        return None
