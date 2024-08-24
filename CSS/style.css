@@ -11,6 +11,7 @@ body {
 
 .logo {
     margin-bottom: 20px;
+    margin-top: 0px;
 }
 
 h1 {
@@ -50,4 +51,22 @@ p {
 
 .button:hover {
     background-color: #0a6c03;
+}
+
+.profileButton {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #3ab503;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    position: absolute;
+    top: 20px;
+    left: 100px
+}
+
+.input-group {
+    margin-bottom: 10px;
 }

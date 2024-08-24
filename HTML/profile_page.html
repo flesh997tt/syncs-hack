@@ -9,19 +9,28 @@
 <body>
     <div class="container">
         <!-- Navigation Bar -->
-        <div class="nav-bar">
-            <a href="friend_list.html" class="button">Back to Friends</a>
-            <a href="login.html" class="button">Sign Out</a>
-        </div>
+
 
         <!-- Logo Section -->
         <div class="logo">
-            <img src="../assets/logo.png" alt="Logo" width="150">
+            <img src="../assets/logo.png" alt="Logo" width="300">
         </div>
 
         <h1>Profile Page</h1>
         <p><strong>Username:</strong> {{ username }}</p>
         <!-- Additional profile information can be added here -->
+
+        <form method="POST" action="{{ url_for('profile') }}">
+            <div class="input-group">
+                <input type="url" id="calendar_url" name="calendar_url" placeholder="Enter your calendar URL" required>
+            </div>
+            <button type="submit" class="button">Save Calendar URL</button>
+        </form> 
+
+        <div class="nav-bar">
+            <a href="friend_list.html" class="button">Back to Friends</a>
+            <a href="login.html" class="button">Sign Out</a>
+        </div>
 
     </div>
 </body>
