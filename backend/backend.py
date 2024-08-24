@@ -23,8 +23,18 @@ class Backend:
     def add_user(self, name, username, password):
         for person in self.people:
             if username == person.get_username():
-                return None
+                return False
         self.people.append(Person([name, username, password]))
+        return True
+    
+    def get_people(self):
+        return self.people
+    
+    def find_username(self, username):
+        for i in range(len(self.people)):
+            if self.people[i].get_username() == username:
+                return self.people[i]
+        return None
 
     def login_checker(self, username, password):
         for person in self.people:
