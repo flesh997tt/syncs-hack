@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Friends</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="../assets/logo.png" alt="Logo" width="150">
+        </div>
+
+        <h1>Welcome, {{ username }}!</h1>
+        <h2>Your Friends</h2>
+
+        {% if friends %}
+        <ul class="friend-list">
+            {% for friend in friends %}
+            <li>{{ friend }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>You have no friends in your list. Add some to start!</p>
+        {% endif %}
+
+        <a href="{{ url_for('add_friend') }}" class="button">Add a Friend</a>
+        <a href="{{ url_for('sign_out') }}" class="button">Sign Out</a>
+    </div>
+</body>
+</html>

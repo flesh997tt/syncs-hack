@@ -18,15 +18,26 @@ h1 {
     margin-bottom: 20px;
 }
 
+h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
 p {
     font-size: 18px;
 }
 
-.auth-buttons {
-    margin-top: 20px;
+.friend-list {
+    list-style-type: none;
+    padding: 0;
 }
 
-.auth-buttons .button {
+.friend-list li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.button {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
@@ -37,46 +48,6 @@ p {
     font-size: 16px;
 }
 
-.auth-buttons .button:hover {
+.button:hover {
     background-color: #0056b3;
-}
-
-.input-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 16px;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-a {
-    color: #007BFF;
-}
-
-a:hover {
-    text-decoration: underline;
 }
