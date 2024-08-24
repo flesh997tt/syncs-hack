@@ -6,11 +6,11 @@ class Person:
         self.name = clean_data[0]
         self.username = clean_data[1]
         self.password = clean_data[2]
-        if len(data) > 3 and clean_data[3] != "None":
+        if len(clean_data) > 3 and clean_data[3] != "None":
             self.calendar = Calendars(clean_data[3])
         else:
             self.calendar = None
-        if len(data) > 4:
+        if len(clean_data) > 4:
             self.friends = clean_data[4:]
         else:
             self.friends = []

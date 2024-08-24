@@ -22,7 +22,7 @@ def sign_up():
         username = request.form['username']
         name = request.form['name']
         password = request.form['password']
-        if not backend.add_user(name,username,password):
+        if backend.add_user(name,username,password):
             session['username'] = username
             return redirect(url_for('home_page'))
         return render_template("sign_up.html")
