@@ -24,7 +24,7 @@ class Backend:
         for person in self.people:
             if username == person.get_username():
                 return False
-        self.people.append(Person([name, username, password]))
+        self.people.append(Person("name" + "," "username" + "," + "password"))
         return True
     
     def get_people(self):
