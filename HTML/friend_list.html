@@ -21,15 +21,14 @@
         <h1>Welcome, {{ name }}!</h1>
         <h2>Your Friends</h2>
 
-        {% if friends %}
-        <ul class="friend-list">
+        <ul class="friends-list">
             {% for friend in friends %}
-            <li>{{ friend }}</li>
+                <li class="friend-box">
+                    <div class="status-circle {% if friend[1] == 'True' %}free{% else %}occupied{% endif %}"></div>
+                    {{ friend.name }}
+                </li>
             {% endfor %}
         </ul>
-        {% else %}
-        <p>You have no friends in your list. Add some to start!</p>
-        {% endif %}
 
         <a href="{{ url_for('add_friend') }}" class="button">Add a Friend</a>
         <a href="login" class="button">Sign Out</a>
