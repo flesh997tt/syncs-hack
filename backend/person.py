@@ -43,6 +43,7 @@ class Person:
         for friend in self.friends:
             string += ","
             string += friend.get_username()
+        return string
 
     def change_ics(self, url):
         self.calendar = Calendars(url)

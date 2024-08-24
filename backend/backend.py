@@ -17,14 +17,15 @@ class Backend:
     def save_file(self):
         fobj = open(self.filename, "w")
         for person in self.people:
-            print(person.format(),file=fobj)
+            print(person.format(),file=fobj,end="")
         fobj.close()
 
     def add_user(self, name, username, password):
         for person in self.people:
             if username == person.get_username():
                 return False
-        self.people.append(Person("name" + "," "username" + "," + "password"))
+        self.people.append(Person(name + "," + username + "," + password))
+        self.save_file()
         return True
     
     def get_people(self):
