@@ -3,7 +3,7 @@ from backend import Backend
 
 
 app = Flask(__name__, template_folder='../HTML', static_folder='../static')
-backend = Backend('backend/data.txt')
+backend = Backend('data.txt')
 backend.parse_file()
 app.secret_key = "HEY"
 
