@@ -1,4 +1,4 @@
-from calendar import Calendars
+from calendars import Calendars
 
 class Person:
     def __init__(self, data):
