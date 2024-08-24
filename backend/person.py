@@ -18,7 +18,7 @@ class Person:
     def fix_people(self, all_people):
         for person in all_people:
             if person.get_username() in self.friends:
-                self.friends[self.friends.index(person.get_username)] = person
+                self.friends[self.friends.index(person.get_username())] = person
 
     def is_busy(self):
         return self.calendar.is_busy()
