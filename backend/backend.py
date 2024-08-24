@@ -17,7 +17,7 @@ class Backend:
     def save_file(self):
         fobj = open(self.filename, "w")
         for person in self.people:
-            print(person.format(),file=fobj,end="")
+            print(person.format(),file=fobj)
         fobj.close()
 
     def add_user(self, name, username, password):

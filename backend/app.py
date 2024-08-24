@@ -27,7 +27,7 @@ def sign_up():
         print(name,username,password)
         if backend.add_user(name,username,password):
             session['username'] = username
-            return redirect(url_for('home_page'))
+            return redirect(url_for('profile_page'))
         return render_template("sign_up.html")
     return render_template("sign_up.html")
 
@@ -46,6 +46,7 @@ def home_page():
 def profile_page():
     if request.method == "POST":
         ics_link = request.form['ics']
+        username = session['username']
         me = backend.find_username(username)
         username = me.change_ics(ics_link)
     username = session['username']
