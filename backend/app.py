@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from backend import Backend
 
-app = Flask(__name__, template_folder='../HTML')
+app = Flask(__name__, template_folder='../HTML', static_folder='../static')
 backend = Backend('backend/data.txt')
 app.secret_key = "HEY"
 
