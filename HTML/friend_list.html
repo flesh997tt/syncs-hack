@@ -18,17 +18,24 @@
             <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" width="300">
         </div>
 
-        <h1>Welcome, {{ name }}!</h1>
+        <h1>Welcome, {{ username }}!</h1>
         <h2>Your Friends</h2>
 
         <ul class="friends-list">
-            {% for friend in friends %}
+            {% for friend in friend_list %}
                 <li class="friend-box">
                     <div class="status-circle {% if friend[1] == 'True' %}free{% else %}occupied{% endif %}"></div>
                     {{ friend.name }}
                 </li>
             {% endfor %}
         </ul>
+
+        <form method="POST" action="{{ url_for('add_friend') }}>
+            <div class="input-group">
+                <input type="text" id="new_friend" name="new_friend" placeholder="Enter friend's username" required>
+            </div>
+            <button type="submit" class="button">Add Friend</button>
+        </form>
 
         <a href="{{ url_for('add_friend') }}" class="button">Add a Friend</a>
         <a href="login" class="button">Sign Out</a>
