@@ -2,7 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from backend import Backend
 
 app = Flask(__name__, template_folder='../HTML')
-backend = Backend('backend/data.txt')
+backend = Backend('data.txt')
+backend.parse_file()
 app.secret_key = "HEY"
 
 @app.route('/login', methods=["GET", "POST"])
