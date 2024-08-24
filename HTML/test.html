@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .file-upload { margin-bottom: 20px; }
+        .events { margin-top: 20px; }
+        .event { border-bottom: 1px solid #ccc; padding: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Your Calendar</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="file-upload">
+                <label for="file">Select a .ics file:</label>
+                <input type="file" id="file" name="file" accept=".ics">
+            </div>
+            <button type="submit">Check Availability</button>
+        </form>
+
+        {% if events %}
+        <div class="events">
+            <h2>Your Events</h2>
+            {% for event in events %}
+            <div class="event">
+                <strong>{{ event.summary }}</strong><br>
+                Start: {{ event.start }}<br>
+                End: {{ event.end }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
