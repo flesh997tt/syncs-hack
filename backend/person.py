@@ -42,7 +42,7 @@ class Person:
             string += "None"
         for friend in self.friends:
             string += ","
-            string += friend.get_username()
+            string += friend
         return string
 
     def change_ics(self, url):
