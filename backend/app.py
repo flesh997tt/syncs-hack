@@ -34,7 +34,7 @@ def friend_list():
     friend = me.online_friends()
     return render_template("friend_list.html", friend_list=friend)
     
-@app.route("/home_page")
+@app.route("/")
 def home_page():
     return render_template("home_page.html")
 
