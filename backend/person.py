@@ -9,7 +9,7 @@ class Person:
         if len(clean_data) > 3 and clean_data[3] != "None":
             self.calendar = Calendars(clean_data[3])
         else:
-            self.calendar = None
+            self.calendar = Calendars("https://timetable.sydney.edu.au/even/rest/calendar/ical/3ae555b9-f109-407a-bc8b-c63a7b5547f5")
         if len(clean_data) > 4:
             self.friends = clean_data[4:]
         else:
@@ -42,7 +42,7 @@ class Person:
             string += "None"
         for friend in self.friends:
             string += ","
-            string += friend
+            string += friend.get_username()
         return string
 
     def change_ics(self, url):
