@@ -57,14 +57,16 @@ def profile_page():
 def sign_out():
     session.pop('username', default=None)
 
-@app.route("/add_friend")
+@app.route("/add_friend", methods=["POST"])
 def add_friend():
-    username = session['username']
-    me = backend.find_username(username)
-    friend_name = request.form('friend')
-    friend = backend.identity(friend_name)
-    if friend is None:
+    if request.method == "POST":
+        username = session['username']
+        me = backend.find_username(username)
+        friend_name = request.form['friend_name']
+        friend = backend.identity(friend_name)
+        print(friend)
+        if friend is None:
+            return False
+        if me.add_friend(friend):
+            return redirect(url_for('friend_list'))
         return False
-    if me.add_friend(friend):
-        return redirect(url_for('friend_list'))
-    return False

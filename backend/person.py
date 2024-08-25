@@ -2,7 +2,7 @@ from calendars import Calendars
 
 class Person:
     def __init__(self, data):
-        clean_data = data.split(',')
+        clean_data = data.strip('\n').split(',')
         self.name = clean_data[0]
         self.username = clean_data[1]
         self.password = clean_data[2]
