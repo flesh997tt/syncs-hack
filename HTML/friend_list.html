@@ -25,7 +25,7 @@
             {% for friend in friend_list %}
                 <li class="friend-box">
                     {{ friend[0] }}
-                    <img src="{{ url_for('static', filename='' + ('6ball.png' if friend[1] == 'True' else 'Antu_8-ball-pool.svg.png')) }}" alt="{{ friend[1] }} cue ball" class="status-icon">
+                    <img src="{{ url_for('static', filename='' + ('6ball.png' if friend[1] == True else 'Antu_8-ball-pool.svg.png')) }}" alt="{{ friend[1] }} cue ball" class="status-icon">
                 </li>
             {% endfor %}
         </ul>
