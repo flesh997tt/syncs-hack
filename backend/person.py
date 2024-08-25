@@ -88,4 +88,6 @@ class Person:
         return True
 
     def __eq__(self, other):
+        if type(other) == str:
+            return False
         return self.username == other.username
