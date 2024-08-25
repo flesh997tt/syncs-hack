@@ -80,11 +80,12 @@ p {
     margin-bottom: 10px;
     border-radius: 5px;
     }
-    .status-circle {
+    .status-icon {
     width: 15px;
     height: 15px;
     border-radius: 50%;
     margin-right: 10px;
+    margin-left: 5px;
     }
     .free {
     background-color: green;
