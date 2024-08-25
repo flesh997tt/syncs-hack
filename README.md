@@ -1,6 +1,10 @@
 # syncs-hack
 SYNCS Hack 2024
 
+Devpost link:
+
+```https://devpost.com/software/come-play-pool```
+
 NOTE: This repository was created the day before the Hackathon started during the Git workshop, however no files were added to it other than README and the LICENSE during this time. All work was done during the 24 hour hackathon period.
 
 The app requires the following packages: Flask, ics, requests.
