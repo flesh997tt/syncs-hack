@@ -50,6 +50,7 @@ def profile_page():
         username = session['username']
         me = backend.find_username(username)
         username = me.change_ics(ics_link)
+        backend.save_file()
     username = session['username']
     return render_template("profile_page.html", username=username)
 
@@ -68,5 +69,6 @@ def add_friend():
         if friend is None:
             return False
         if me.add_friend(friend):
+            backend.save_file()
             return redirect(url_for('friend_list'))
         return False
