@@ -24,8 +24,8 @@
         <ul class="friends-list">
             {% for friend in friend_list %}
                 <li class="friend-box">
-                    <div class="status-circle {% if friend[1] == 'True' %}free{% else %}occupied{% endif %}"></div>
                     {{ friend[0] }}
+                    <div class="status-circle {% if friend[1] == 'True' %}free{% else %}occupied{% endif %}"></div>
                 </li>
             {% endfor %}
         </ul>

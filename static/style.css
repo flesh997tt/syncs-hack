@@ -74,6 +74,7 @@ p {
 .friend-box {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 10px;
     border: 0px solid #ccc;
     margin-bottom: 10px;
